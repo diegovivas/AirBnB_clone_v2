@@ -8,7 +8,7 @@ from fabric.api import env, put, run
 
 env.key_filename = "~/.ssh/holberton"
 env.user = "ubuntu"
-env.hosts = ['35.237.10.249', '35.237.191.203']
+env.hosts = [' 35.190.174.178', '35.227.18.143']
 
 
 def do_deploy(archive_path):
