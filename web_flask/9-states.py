@@ -10,8 +10,8 @@ app = Flask(__name__)
 @app.route('/states', strict_slashes=False)
 def _states():
 
-    states = [storage.all('State')[x] for x in storage.all('State')]
-    return render_template('9-states.html', states=states)
+    lista = [storage.all('State')[x] for x in storage.all('State')]
+    return render_template('7-states_list.html', lista=lista)
 
 
 @app.route('/states/<id>', strict_slashes=False)
