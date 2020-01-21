@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-run flask app
+using my storage with flask
 """
 from models import storage
 from flask import Flask, render_template
