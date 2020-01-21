@@ -17,16 +17,15 @@ def _states():
 @app.route('/states/<id>', strict_slashes=False)
 def id_states(id):
 
-    states = [storage.all('State')[x] for x in storage.all('State')]
-    cities = [storage.all('City')[x] for x in storage.all('City')]
-
+    states = [storage.all('State')[x] for x in storage.all('State')]    
     for x in states:
         if x.id == id:
+            cities = x.cities
+            state = x
             return render_template('9-states.html',
-                                   states=states,
-                                   cities=cities,
-                                   id=id)
-    nf = 'not found'
+                                   state=state,
+                                   cities=cities)
+    nf = 'Not found!'
     return render_template('9-states.html', nf=nf)
 
 

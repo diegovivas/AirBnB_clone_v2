@@ -4,32 +4,26 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-      {%- if nf %}
-
-      <H1>Not found!</H1>
+      {% if nf%}
+      <H1>{{ nf }}</H1>
       {% else %}
-      {%- if cities %}
-          {% for valor in states|sort(attribute='name') %}
-              {% if valor.id == id  %}
-          <H1>State: {{ valor.name }}</H1>
-	  <H3>Cities:</H3>
-	  <UL>
-	        {%- for citie in cities|sort(attribute='name') -%}
-	            {%- if citie.state_id == id %}
-	          <LI>{{ citie.id }}: <B>{{ citie.name }}</B></li>
-	            {% endif -%}
-	        {% endfor %}
-	  </UL>
-	      {%- endif -%}
-	        {%- endfor %}
-      {% else %}
-	  <H1>States</H1>
-	  <UL>
-	    {% for valor in states|sort(attribute='name') %}
-            <LI>{{ valor.id }}: <B>{{ valor.name }}</B></LI>
-	    {% endfor %}
-	  </UL>
-      {%-endif %}
-     {%- endif %}
+      {% if states %}
+      <H1>States</H1>
+      <UL>
+      {% for element in states|sort(attribute='name') %}
+          <LI>{{ element.id }}: <B>{{ element.name }}</B></LI>
+      {%  endfor %}
+      </UL>
+      {% endif %}
+      {% if state %}
+      <H1>State: {{ state.name }}</H1>
+      <H3>Cities:</H3>
+      <UL>
+      {% for element in cities|sort(attribute='name') %}
+          <LI>{{ element.id }}: <B>{{ element.name }}</B></LI>
+      {% endfor %}
+      </UL>
+      {% endif %}
+      {% endif %}
     </BODY>
 </HTML>
