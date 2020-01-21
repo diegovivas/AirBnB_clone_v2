@@ -7,14 +7,6 @@
       {% if nf%}
       <H1>{{ nf }}</H1>
       {% else %}
-      {% if states %}
-      <H1>States</H1>
-      <UL>
-      {% for element in states|sort(attribute='name') %}
-          <LI>{{ element.id }}: <B>{{ element.name }}</B></LI>
-      {%  endfor %}
-      </UL>
-      {% endif %}
       {% if state %}
       <H1>State: {{ state.name }}</H1>
       <H3>Cities:</H3>
