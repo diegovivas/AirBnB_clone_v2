@@ -25,4 +25,4 @@ class State(BaseModel, Base):
             for element in city_list.values():
                 if element.state_id == self.id:
                     final.append(element)
-                    return final
+            return final
