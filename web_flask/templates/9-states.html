@@ -9,7 +9,7 @@
       <H1>Not found!</H1>
       {% else %}
       {%- if cities %}
-          {% for valor in states|sort(attribute='name') -%}
+          {% for valor in states|sort(attribute='name') %}
               {% if valor.id == id  %}
           <H1>State: {{ valor.name }}</H1>
 	  <H3>Cities:</H3>
