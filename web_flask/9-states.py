@@ -17,7 +17,7 @@ def _states():
 @app.route('/states/<id>', strict_slashes=False)
 def id_states(id):
 
-    states = [storage.all('State')[x] for x in storage.all('State')]    
+    states = [storage.all('State')[x] for x in storage.all('State')]
     for x in states:
         if x.id == id:
             cities = x.cities
