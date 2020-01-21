@@ -4,13 +4,13 @@
         <TITLE>HBNB</TITLE>
     </HEAD>
     <BODY>
-      {% if lista %}
+      {%- if lista %}
       <H1>States</H1>
       <UL>
-	{% for clave, value in lista|dictsort %}
+	{% for value in lista|sort(attribute='name') %}
 	<LI>{{ value.id }}: <B>{{ value.name }}</B></LI>
 	{% endfor %}
       </UL>
-      {% endif %}
+      {%- endif %}
     </BODY>
 </HTML>
