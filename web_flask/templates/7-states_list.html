@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<HTML lang="en">
+    <HEAD>
+        <TITLE>HBNB</TITLE>
+    </HEAD>
+    <BODY>
+      {% if lista %}
+      <H1>States</H1>
+      <UL>
+	{% for key, value in lista|dictsort %}
+	<LI>{{ value.id }}: <B>{{ value.name }}</B></LI>
+	{% endfor %}
+      </UL>
+      {% endif %}
+    </BODY>
+</HTML>
